@@ -31,7 +31,7 @@ class Board:
     def get_white_pieces(self):
         return self.white_pieces
 
-    def get_black_peices(self):
+    def get_black_pieces(self):
         return self.black_pieces
 
 

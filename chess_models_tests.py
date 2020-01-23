@@ -9,7 +9,7 @@ class TestModels(unittest.TestCase):
 
         board = init_board()
         white_pieces = board.get_white_pieces()
-        black_pieces = board.get_black_peices()
+        black_pieces = board.get_black_pieces()
         # Check pawns
         for col in range(0, 8):
             white_pawn_row = 1
