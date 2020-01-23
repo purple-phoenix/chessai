@@ -4,8 +4,8 @@ from typing import List, Tuple, Union
 class AbsPiece:
 
     def __init__(self, row: int, col: int):
-        self.row = row # Row piece is located on board from white perspective. Bottommost is 0 topmost is 7
-        self.col = col # Col piece is located on board from white perspective. Leftmost is 0 right most is 7
+        self.row = row  # Row piece is located on board from white perspective. Bottommost is 0 topmost is 7
+        self.col = col  # Col piece is located on board from white perspective. Leftmost is 0 right most is 7
 
 
 class Pawn(AbsPiece):
@@ -15,6 +15,15 @@ class Pawn(AbsPiece):
 
     def __eq__(self, other):
         return isinstance(other, Pawn) and self.col == other.col and self.row == other.row
+
+
+class Knight(AbsPiece):
+
+    def __init__(self, row: int, col: int):
+        super().__init__(row, col)
+
+    def __eq__(self, other):
+        return isinstance(other, Knight) and self.col == other.col and self.row == other.row
 
 
 Piece = Union[Pawn]
@@ -44,4 +53,42 @@ def init_board() -> Board:
         white_pieces.append(Pawn(white_pawn_row, col))
         black_pieces.append(Pawn(black_pawn_row, col))
 
+    white_main_piece_row = 0
+    black_main_piece_row = 7
+
+    knight_cols = [1, 6]
+    for col in knight_cols:
+        white_pieces.append(Knight(white_main_piece_row, col))
+        black_pieces.append(Knight(black_main_piece_row, col))
+
     return Board(white_pieces, black_pieces)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
