@@ -39,6 +39,15 @@ class TestModels(unittest.TestCase):
 
         # Check Rooks
 
+        expected_white_rooks = [Rook(0, 0), Rook(0, 7)]
+        expected_black_rooks = [Rook(7, 0), Rook(7, 7)]
+
+        for wr in expected_white_rooks:
+            assert wr in white_pieces
+
+        for br in expected_black_rooks:
+            assert br in black_pieces
+
         # Check Kings
 
         # Check Queens
