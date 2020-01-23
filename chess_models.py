@@ -26,7 +26,15 @@ class Knight(AbsPiece):
         return isinstance(other, Knight) and self.col == other.col and self.row == other.row
 
 
-Piece = Union[Pawn]
+class Bishop(AbsPiece):
+    def __init__(self, row: int, col: int):
+        super().__init__(row, col)
+
+    def __eq__(self, other):
+        return isinstance(other, Bishop) and self.col == other.col and self.row == other.row
+
+
+Piece = Union[Pawn, Knight, Bishop]
 
 
 class Board:
@@ -60,6 +68,11 @@ def init_board() -> Board:
     for col in knight_cols:
         white_pieces.append(Knight(white_main_piece_row, col))
         black_pieces.append(Knight(black_main_piece_row, col))
+
+    bishops_cols = [2, 5]
+    for col in bishops_cols:
+        white_pieces.append(Bishop(white_main_piece_row, col))
+        black_pieces.append(Bishop(black_main_piece_row, col))
 
     return Board(white_pieces, black_pieces)
 

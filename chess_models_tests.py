@@ -28,6 +28,15 @@ class TestModels(unittest.TestCase):
             assert expected_black_knight in black_pieces
         # Check bishops
 
+        expected_white_bishops = [Bishop(0, 2), Bishop(0, 5)]
+        expected_black_bishops = [Bishop(7, 2), Bishop(7, 5)]
+
+        for wb in expected_white_bishops:
+            assert wb in white_pieces
+
+        for bb in expected_black_bishops:
+            assert bb in black_pieces
+
         # Check Rooks
 
         # Check Kings
