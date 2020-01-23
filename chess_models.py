@@ -42,7 +42,23 @@ class Rook(AbsPiece):
         return isinstance(other, Rook) and self.col == other.col and self.row == other.row
 
 
-Piece = Union[Pawn, Knight, Bishop]
+class King(AbsPiece):
+    def __init__(self, row: int, col: int):
+        super().__init__(row, col)
+
+    def __eq__(self, other):
+        return isinstance(other, King) and self.col == other.col and self.row == other.row
+
+
+class Queen(AbsPiece):
+    def __init__(self, row: int, col: int):
+        super().__init__(row, col)
+
+    def __eq__(self, other):
+        return isinstance(other, Queen) and self.col == other.col and self.row == other.row
+
+
+Piece = Union[Pawn, Knight, Bishop, Rook, King, Queen]
 
 
 class Board:
@@ -86,6 +102,14 @@ def init_board() -> Board:
     for col in rook_cols:
         white_pieces.append(Rook(white_main_piece_row, col))
         black_pieces.append(Rook(black_main_piece_row, col))
+
+    king_col = 4
+    white_pieces.append(King(white_main_piece_row, king_col))
+    black_pieces.append(King(black_main_piece_row, king_col))
+
+    queen_col = 3
+    white_pieces.append(Queen(white_main_piece_row, queen_col))
+    black_pieces.append(Queen(black_main_piece_row, queen_col))
 
     return Board(white_pieces, black_pieces)
 

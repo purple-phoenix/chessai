@@ -50,7 +50,13 @@ class TestModels(unittest.TestCase):
 
         # Check Kings
 
+        assert King(0, 4) in white_pieces
+        assert King(7, 4) in black_pieces
+
         # Check Queens
+
+        assert Queen(0, 3) in white_pieces
+        assert Queen(7, 3) in black_pieces
 
 
 if __name__ == '__main__':
