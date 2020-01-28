@@ -77,9 +77,14 @@ class Board:
 
     def has_piece(self, row, col):
         for white_piece in self.white_pieces:
-            print(white_piece)
+            if white_piece.row == row and white_piece.col == col:
+                return white_piece, True
 
-        return "asdfsad"
+        for black_piece in self.black_pieces:
+            if black_piece.row == row and black_piece.col == col:
+                return black_piece, False
+
+        return None
 
 
 def init_board() -> Board:
