@@ -58,6 +58,21 @@ class TestModels(unittest.TestCase):
         assert Queen(0, 3) in white_pieces
         assert Queen(7, 3) in black_pieces
 
+    def test_has_piece(self):
+        board = init_board()
+        knight_row = 0
+        knight_col = 1
+        is_white = True
+        self.assertEqual((Knight(knight_row, knight_col), is_white), board.has_piece(knight_row, knight_col))
+
+        pawn_row = 6
+        pawn_col = 7
+        is_white = False
+        self.assertEqual((Pawn(pawn_row, pawn_col), is_white), board.has_piece(pawn_row, pawn_col))
+
+        empty_row = 4
+        empty_col = 4
+        self.assertEqual(None, board.has_piece(empty_row, empty_col))
 
 if __name__ == '__main__':
     unittest.main()

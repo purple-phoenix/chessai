@@ -75,6 +75,12 @@ class Board:
     def get_black_pieces(self):
         return self.black_pieces
 
+    def has_piece(self, row, col):
+        for white_piece in self.white_pieces:
+            print(white_piece)
+
+        return "asdfsad"
+
 
 def init_board() -> Board:
     white_pieces = []
