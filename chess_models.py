@@ -16,6 +16,9 @@ class Pawn(AbsPiece):
     def __eq__(self, other):
         return isinstance(other, Pawn) and self.col == other.col and self.row == other.row
 
+    def __str__(self):
+        return "Pawn"
+
 
 class Knight(AbsPiece):
 
@@ -25,6 +28,8 @@ class Knight(AbsPiece):
     def __eq__(self, other):
         return isinstance(other, Knight) and self.col == other.col and self.row == other.row
 
+    def __str__(self):
+        return "Knight"
 
 class Bishop(AbsPiece):
     def __init__(self, row: int, col: int):
@@ -33,6 +38,8 @@ class Bishop(AbsPiece):
     def __eq__(self, other):
         return isinstance(other, Bishop) and self.col == other.col and self.row == other.row
 
+    def __str__(self):
+        return "Bishop"
 
 class Rook(AbsPiece):
     def __init__(self, row: int, col: int):
@@ -41,6 +48,8 @@ class Rook(AbsPiece):
     def __eq__(self, other):
         return isinstance(other, Rook) and self.col == other.col and self.row == other.row
 
+    def __str__(self):
+        return "Rook"
 
 class King(AbsPiece):
     def __init__(self, row: int, col: int):
@@ -49,6 +58,9 @@ class King(AbsPiece):
     def __eq__(self, other):
         return isinstance(other, King) and self.col == other.col and self.row == other.row
 
+    def __str__(self):
+        return "King"
+
 
 class Queen(AbsPiece):
     def __init__(self, row: int, col: int):
@@ -56,6 +68,9 @@ class Queen(AbsPiece):
 
     def __eq__(self, other):
         return isinstance(other, Queen) and self.col == other.col and self.row == other.row
+
+    def __str__(self):
+        return "Queen"
 
 
 Piece = Union[Pawn, Knight, Bishop, Rook, King, Queen]

@@ -74,5 +74,6 @@ class TestModels(unittest.TestCase):
         empty_col = 4
         self.assertEqual(None, board.has_piece(empty_row, empty_col))
 
+
 if __name__ == '__main__':
     unittest.main()
